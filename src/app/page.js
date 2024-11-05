@@ -4,6 +4,8 @@ import Container from "./common/container";
 import Input from "./common/SearchInput";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import RecentSearch from "./common/recentSearch";
+
 
 export default function Home() {
   const [showpassword, setShowpassword] = useState(true);
@@ -19,6 +21,7 @@ export default function Home() {
           <Input placeholder="default" />
         </div>
 
+      <RecentSearch/>
         <div className="mt-6">
           <Input
             className="bg-[url('/assets/icons/commonIcons/search.svg')]  bg-no-repeat text-base bg-[15px_13px] bg-[length:20px_20px]"
