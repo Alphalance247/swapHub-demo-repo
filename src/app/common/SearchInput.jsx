@@ -4,6 +4,12 @@ const Input = ({
   props,
   style,
   placeholder,
+  name,
+  value,
+  text,
+  id,
+  onChange,
+  autoComplete,
 }) => {
   const variantStyles = {
     default: "bg-[#F1F1F1] px-4",
@@ -13,12 +19,17 @@ const Input = ({
 
   return (
     <input
-      type="text"
+      id={id}
+      type={text}
+      name={name}
       placeholder={placeholder}
-      value=""
+      value={value}
+      required
       className={`w-full py-3 outline-none rounded-lg ${className} ${variantStyles[variant]}`}
       {...props}
       style={{ style }}
+      onChange={onChange}
+      autoComplete={autoComplete}
     />
   );
 };
