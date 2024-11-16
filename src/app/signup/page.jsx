@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const SignUp = () => {
   return (
-    <div className="px-4 pt-8 pb-80 h-lvh">
+    <div className="px-4 pt-8 pb-80">
       <div className="text-center mb-8">
         <p className="mb-[22px] text-2xl text-[#4A4A4A]">Logo</p>
         <p className="text-[#333333B2] font-semibold text-2xl">Welcome!</p>
@@ -17,9 +17,8 @@ const SignUp = () => {
       <div className="text-center mt-8">
         <p className="text-[#333333B2] mb-8 font-medium text-sm">
           Already have an account?
-          <Link href="/">
+          <Link href="/login">
             <span className="text-[#020B30] underline underline-offset-4">
-              {" "}
               Login
             </span>
           </Link>

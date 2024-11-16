@@ -7,18 +7,19 @@ import { useMemo } from "react";
 import { PostRequest } from "@/utils/helper";
 import { environmentUrl } from "@/env/env.local";
 import axios from "axios";
-import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
-const Register = () => {
+const Login = () => {
   const [userData, setUserData] = useState({});
   const [showpassword, setShowpassword] = useState(true);
-  const [showConfirmpassword, setShowConfirmpassword] = useState(true);
   const passwordRegex = useMemo(
     () => new RegExp("^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$"),
     []
   );
   const [error, setError] = useState({});
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const [credentials, setCredentials] = useState({});
 
   const handleChange = (e) => {
     let { name, value } = e.target;
@@ -30,9 +31,6 @@ const Register = () => {
         [name]:
           "Password must contain at least 8 characters and must must be alphanumeric.",
       }));
-    }
-    if (name === "confirm_password" && value !== userData?.password) {
-      setError((prev) => ({ ...prev, [name]: "Passwords don't match." }));
     }
 
     setUserData((prev) => ({ ...prev, [name]: value }));
@@ -46,7 +44,7 @@ const Register = () => {
     }
   };
 
-  const handleUserRegistration = async (e) => {
+  const handleUserLogin = async (e) => {
     e.preventDefault();
 
     for (let key in error) {
@@ -57,17 +55,15 @@ const Register = () => {
     setLoading(true);
 
     await axios
-      .post(`${environmentUrl.baseUrl}${environmentUrl.registerUrl}`, {
+      .post(`${environmentUrl.baseUrl}${environmentUrl.loginUrl}`, {
         ...userData,
-        first_name: "azeez",
-        last_name: "lawal",
-        phonenumber: "+1238140686688",
       })
       .then((res) => {
         if (res.status >= 200 && res.status < 300) {
           toast.success(
             "Registration successful, kindly check your mailbox for confirmation"
           );
+          router.push("/");
           setUserData((prev) => ({}));
           setLoading(false);
         } else {
@@ -107,11 +103,9 @@ const Register = () => {
       });
   };
 
-  console.log(userData);
-
   return (
-    <div className="">
-      <form action="" onSubmit={handleUserRegistration}>
+    <section className="px-4 pt-8 pb-80">
+      <form action="" onSubmit={handleUserLogin}>
         <div className="flex flex-col gap-y-4 mb-8">
           <div>
             <div className="mb-[4px]">
@@ -170,50 +164,15 @@ const Register = () => {
               </span>
             </div>
           </div>
-
-          {handleError({ field: "password", returnMessage: true }) && (
+          {handleError({
+            field: "password",
+            returnMessage: true,
+          }) && (
             <span className="text-red-600 text-xs mt-[-8px]">
-              {handleError({ field: "password", returnMessage: true })}
-            </span>
-          )}
-
-          <div className="relative">
-            <div className="mb-[4px]">
-              <label
-                htmlFor="confirm_password"
-                className="text-[#303030] text-sm font-semibold"
-              >
-                Confirm Password
-              </label>
-            </div>
-            <div>
-              <Input
-                name="confirm_password"
-                text={showConfirmpassword ? "text" : "password"}
-                id="confirm_password"
-                placeholder="Enter password"
-                value={userData.confirm_password || ""}
-                onChange={handleChange}
-                className={`${handleError("confirm_password")}`}
-                autoComplete="false"
-              />
-              <span
-                onClick={() =>
-                  setShowConfirmpassword((prevState) => !prevState)
-                }
-                className="absolute right-3 top-[70%] transform -translate-y-1/2 cursor-pointer text-gray-500"
-              >
-                {showConfirmpassword ? (
-                  <AiFillEye size={20} />
-                ) : (
-                  <AiFillEyeInvisible size={20} />
-                )}
-              </span>
-            </div>
-          </div>
-          {handleError({ field: "confirm_password", returnMessage: true }) && (
-            <span className="text-red-600 text-xs mt-[-8px]">
-              {handleError({ field: "confirm_password", returnMessage: true })}
+              {handleError({
+                field: "password",
+                returnMessage: true,
+              })}
             </span>
           )}
         </div>
@@ -222,8 +181,8 @@ const Register = () => {
           {loading ? "Loading....." : "Create Account"}
         </Button>
       </form>
-    </div>
+    </section>
   );
 };
 
-export default Register;
+export default Login;
