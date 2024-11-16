@@ -5,9 +5,9 @@ import Input from "./common/SearchInput";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import ProductCards from "./common/cards/productCards";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
 
 export default function Home() {
   const [showpassword, setShowpassword] = useState(true);
@@ -59,11 +59,11 @@ export default function Home() {
           </span>
         </div>
 
-        <Slider {...settings}>
+        {/* <Slider {...settings}>
           <ProductCards />
           <ProductCards />
           <ProductCards />
-        </Slider>
+        </Slider> */}
       </section>
       {/* <div
         className={`grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
