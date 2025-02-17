@@ -4,7 +4,13 @@ import Container from "./common/container";
 import Input from "./common/SearchInput";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import ProductCards from "./common/cards/productCards";
+import ProductCards from "./common/cards/ProductCards";
+import SectionTwo from "./components/Landing/SectionTwo"
+import SectionFour from "./components/Landing/SectionFour"
+import Testimonies from "./components/Landing/Testimonies"
+import FAQSection from "./components/Landing/FAQSection"
+// import ButtonSection from "./components/Landing/ButtonSection"
+// import Tabsection from "./components/Landing/Tabsection"
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 // import Slider from "react-slick";
@@ -162,6 +168,12 @@ export default function Home() {
           </a>
         </footer>
       </div> */}
+      <SectionTwo />
+      <SectionFour />
+      <Testimonies />
+      <FAQSection />
+    
     </Container>
+
   );
 }
