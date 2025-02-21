@@ -1,6 +1,7 @@
 export const environmentUrl = {
   production: false,
-  baseUrl: "https://backend-oz97.onrender.com/api/v1",
-  loginUrl: "/account/login",
+  baseUrl: "http://151.80.106.48/api/v1",
+  loginUrl: "/account/login/token",
   registerUrl: "/account/register",
+  waitListUrl: "/account/waitlist",
 };
