@@ -1,4 +1,6 @@
-import Card from "../../common/cards/SectionTwoCard"; 
+import Layout from "@/app/common/layout";
+import Card from "../../common/cards/SectionTwoCard";
+import HeadingWithSubHead from "@/app/common/headingWithSubHead";
 
 const cardData = [
   {
@@ -29,22 +31,29 @@ const cardData = [
 
 export default function SectionTwoComponent() {
   return (
-    <div className="max-w-6xl mx-auto py-10 px-4 transition-colors duration-300">
-      <h2 className="text-2xl font-semibold text-center mb-6 text-gray-900 dark:text-gray-100">
-        SwapHub combines innovation and simplicity to bring your business online.
-      </h2>
+    <Layout>
+      <div className="max-w-6xl mx-auto transition-colors duration-300">
+        <HeadingWithSubHead
+          heading={
+            "SwapHub combines innovation and simplicity to bring your business online."
+          }
+          withSubHead={false}
+          vaiant={"secondary"}
+          className={"w-[80%] mx-auto mb-16 text-center"}
+        />
 
-      {/* Grid Layout */}
-      <div className="grid md:grid-cols-2 gap-6">
-        {cardData.map((card, index) => (
-          <Card
-            key={index}
-            title={card.title}
-            description={card.description}
-            image={card.image}
-          />
-        ))}
+        {/* Grid Layout */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {cardData.map((card, index) => (
+            <Card
+              key={index}
+              title={card?.title}
+              description={card?.description}
+              image={card?.image}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 }
