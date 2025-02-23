@@ -1,5 +1,4 @@
 "use client"; // Required for state in Next.js App Router
-
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 

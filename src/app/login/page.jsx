@@ -8,6 +8,7 @@ import { PostRequest } from "@/utils/helper";
 import { environmentUrl } from "@/env/env.local";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [userData, setUserData] = useState({});
@@ -55,37 +56,42 @@ const Login = () => {
     setLoading(true);
 
     await axios
-      .post(`${environmentUrl.baseUrl}${environmentUrl.loginUrl}`, {
+      .post(`/api/auth/login`, {
         ...userData,
       })
       .then((res) => {
         if (res.status >= 200 && res.status < 300) {
-          toast.success(
-            "Registration successful, kindly check your mailbox for confirmation"
-          );
-          router.push("/");
+          const { fullname, message } = res?.data;
+          toast.success(`"Welcome back ${fullname}`);
+          console.log(fullname);
+          router.push("/join-wait-list");
           setUserData((prev) => ({}));
           setLoading(false);
         } else {
-          toast.error("Registration failed");
+          toast.error(
+            `Registration failed An unexpected error occurred. ${res?.data?.statusmessage}`
+          );
           // handleNetworkError(response?.data?.details);
           console.log("Network Error");
           setLoading(false);
         }
       })
       .catch((error) => {
+        const errorMessage = error?.res?.statusmessage;
         if (error.isAxiosError) {
-          if (error.response) {
+          if (error.res) {
             // If server responded with a status code for a request
             console.log("Data ", error.response.data);
             console.log("Status ", error.response.status);
-            toast.error(`Registration failed ${error.response.status}`);
+            toast.error(
+              `Registration failed An unexpected error occurred. ${errorMessage}`
+            );
             console.log("Headers ", error.response.headers);
             console.log("Network ", error.isAxiosError);
             // console.log(error.is)
           } else if (error.request) {
             // Client made a request but response is not received
-            toast.error(`Registration failed ${error.request}`);
+            toast.error(`Registration failed ${errorMessage}`);
           } else {
             // Other case
             console.log(
@@ -177,7 +183,7 @@ const Login = () => {
           )}
         </div>
 
-        <Button type="submit">
+        <Button type="submit" disabled={loading}>
           {loading ? "Loading....." : "Create Account"}
         </Button>
       </form>

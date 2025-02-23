@@ -12,6 +12,12 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        recoletaRegular: ["recoletaRegular", "sans-serif"],
+        recoletaMedium: ["recoletaMedium", "sans-serif"],
+        recoletaSemiBold: ["recoletaSemibold", "sans-serif"],
+        recoletaBold: ["recoletaBold", "sans-serif"],
+      },
     },
   },
   plugins: [],

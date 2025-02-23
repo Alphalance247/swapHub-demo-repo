@@ -3,7 +3,7 @@ import Header from "./header";
 
 const Container = ({ children }) => {
   return (
-    <div>
+    <div className="bg-[#F5F5F5]">
       <Header />
       {children}
       <Footer />

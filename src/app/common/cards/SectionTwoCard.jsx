@@ -2,15 +2,13 @@ import Image from "next/image";
 
 export default function Card({ title, description, image }) {
   return (
-    <div className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-colors duration-300">
+    <div className="bg-[#E3E3E3] rounded-2xl shadow-md overflow-hidden transition-colors duration-300">
       {/* Text Section */}
       <div className="p-5">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
           {title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-300 mt-2">
-          {description}
-        </p>
+        <p className="text-gray-600 dark:text-gray-300 mt-2">{description}</p>
       </div>
 
       {/* Image Section */}
