@@ -28,7 +28,7 @@ const Button = ({
   // };
   return (
     <button
-      className={`block py-3 px-4 rounded-md text-base ${buttonColor[variant]} ${className}`}
+      className={`block py-3 px-4 font-medium rounded-md text-base ${buttonColor[variant]} ${className}`}
       disabled={disabled}
       onClick={onClick}
       {...props}

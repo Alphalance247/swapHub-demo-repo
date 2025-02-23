@@ -13,7 +13,7 @@ const Hero = () => {
           className={"mb-6 text-center w-[60%] mx-auto"}
           vaiant={"primary"}
           withSubHead={true}
-          subHeadWidth={"w-[60%] mx-auto"}
+          subHeadWidth={"w-[65%] mx-auto"}
           subhead={
             "Turn your products and services into a seamless online experience for customers."
           }
@@ -22,7 +22,7 @@ const Hero = () => {
         <div className="flex items-center justify-center gap-x-4 max-lg:hidden">
           <Button
             variant="secondary"
-            className="w-[258px] flex items-center gap-x-[10px]"
+            className="w-[258px] flex items-center gap-x-[10px] justify-center"
           >
             Create a free account{" "}
             <span>

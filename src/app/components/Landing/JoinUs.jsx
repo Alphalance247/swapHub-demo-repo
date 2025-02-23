@@ -17,7 +17,7 @@ const JoinUs = () => {
       </div>
       <Layout>
         <div>
-          <p className="text-center text-white text-[40px] font-bold leading-[48px] mb-6 w-[63%] mx-auto">
+          <p className="text-center text-white text-[40px] font-bold leading-[48px] mb-6 w-[63%] mx-auto font-recoletaBold">
             Join thousands of vendors and service providers making business
             seamless with SwapHub.
           </p>

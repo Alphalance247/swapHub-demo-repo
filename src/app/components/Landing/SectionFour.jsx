@@ -1,4 +1,4 @@
-import FeatureCard from "../../common/cards/SectionFourCard"; 
+import FeatureCard from "../../common/cards/SectionFourCard";
 
 export default function FeaturesSection() {
   const features = [
@@ -41,7 +41,8 @@ export default function FeaturesSection() {
         Everything you’ve always wished for
       </h2>
       <p className="text-gray-600 dark:text-gray-300 mt-2 text-center">
-        Your business, your rules, effortless selling, seamless trading, and more.
+        Your business, your rules, effortless selling, seamless trading, and
+        more.
       </p>
 
       {/* Features Grid */}
@@ -70,7 +71,7 @@ export default function FeaturesSection() {
 
         {/* Second Row: 3 Columns */}
         <div
-          className="grid md:grid-cols-3 gap-[16px] border-gray-300 dark:border-gray-600 pl-6"
+          className="grid md:grid-cols-3 gap-[16px] border-gray-300 dark:border-gray-600"
           style={{ width: "1200px", height: "400px" }}
         >
           {features.slice(2, 5).map((feature, index) => (
