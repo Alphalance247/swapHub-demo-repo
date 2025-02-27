@@ -75,7 +75,7 @@ const GettingStarted = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 20 }}
-                      className="mt-10 flex items-center justify-center rounded-[2.5rem] w-[85%] h-[496px] mx-auto"
+                      className="mt-10 grid grid-cols-2 items-center rounded-[2.5rem] w-[85%] h-[auto] mx-auto max-lg:w-[95%] max-md:grid-cols-1 max-md:rounded-2xl"
                       style={{ background: items?.bg }}
                     >
                       <Image
@@ -83,16 +83,20 @@ const GettingStarted = () => {
                         width={490}
                         height={500}
                         alt="createHub"
-                        className="ml-[-1rem]"
+                        // layout="responsive"
+                        className="ml-[-1rem] max-md:ml-0"
                       />
-                      <div className="pr-16 pl-16 flex flex-col gap-y-6">
-                        <p className="text-white text-2xl font-bold leading-7">
+                      <div className="pr-16 pl-16 flex flex-col gap-y-6 max-md:pt-4 max-md:px-4 max-md:pb-4">
+                        <p className="text-white text-2xl font-bold leading-7 font-recoletaBold max-md:text-xl">
                           {items?.heading}
                         </p>
-                        <p className="text-white text-lg font-normal font-['Inter'] leading-normal">
+                        <p className="text-white text-lg font-normal font-['Inter'] leading-normal max-md:text-base ">
                           {items?.subhead}
                         </p>
-                        <Button variant={"primary"} className={"w-fit"}>
+                        <Button
+                          variant={"primary"}
+                          className={"w-fit max-md:w-fit max-sm:w-fit"}
+                        >
                           {items?.btn}
                         </Button>
                       </div>
@@ -105,9 +109,12 @@ const GettingStarted = () => {
 
           {/* Buttons for showing progress */}
           <div className="mt-6 mx-auto w-[85%] gap-x-3 flex justify-end">
-            <Button variant={"primary"}>{activeTab + 1} / 4</Button>
+            <Button variant={"primary"} className={"max-md:w-fit"}>
+              {activeTab + 1} / 4
+            </Button>
             <Button
               variant={"primary"}
+              className={"max-md:w-fit"}
               onClick={() => {
                 if (activeTab < 3) {
                   setActiveTab(activeTab + 1);

@@ -36,8 +36,9 @@ const Footer = () => {
   return (
     <footer className="bg-[#1A1A1A]">
       <div className="max-w-[1280px] pt-36 pb-12 px-6 mx-auto">
-        <div className="grid grid-cols-[25%15%15%25%] gap-x-20 mb-20">
-          <div>
+        <div className="flex gap-x-20 justify-between mb-20 max-xl:gap-x-10 max-lg:flex-col max-lg:gap-y-10">
+          {/* [25%15%15%25%] */}
+          <div className="w-[25%]">
             <Image
               src="/assets/icons/commonIcons/footerlogo.svg"
               width={130}
@@ -73,7 +74,7 @@ const Footer = () => {
 
           {navs.map((items) => {
             return (
-              <div key={items?.id}>
+              <div key={items?.id} className="">
                 <h6 className="mb-6 text-white text-base font-bold">
                   {items?.heading}
                 </h6>
@@ -126,7 +127,7 @@ const Footer = () => {
             );
           })}
 
-          <div className="p-6 bg-[#303030] rounded-[20px] flex flex-col justify-start items-start gap-y-3">
+          <div className="p-6 bg-[#303030] rounded-[20px] flex flex-col justify-start gap-y-3 max-lg:flex-1">
             <p className="text-center text-white text-base font-semibold leading-normal">
               Subscribe To Our Newsletter
             </p>
