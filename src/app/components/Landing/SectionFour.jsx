@@ -1,4 +1,7 @@
+import Layout from "@/app/common/layout";
 import FeatureCard from "../../common/cards/SectionFourCard";
+import HeadingWithSubHead from "@/app/common/headingWithSubHead";
+import Button from "@/app/common/Button";
 
 export default function FeaturesSection() {
   const features = [
@@ -35,70 +38,53 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <div className="max-w-[1200px] mx-auto py-10 px-4">
-      {/* Heading */}
-      <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 text-center">
-        Everything you’ve always wished for
-      </h2>
-      <p className="text-gray-600 dark:text-gray-300 mt-2 text-center">
-        Your business, your rules, effortless selling, seamless trading, and
-        more.
-      </p>
+    <section className="bg-white">
+      <Layout>
+        <HeadingWithSubHead
+          heading={"Everything you’ve always wished for"}
+          className={
+            "mb-6 text-center w-[80%] mx-auto max-xl:w-[70%] max-lg:w-[90%] max-md:w-full"
+          }
+          vaiant={"secondary"}
+          withSubHead={true}
+          subHeadWidth={"w-[85%] mx-auto max-lg:w-[85%] max-md:w-[95%]"}
+          subhead={
+            "Your business, your rules, effortless selling, seamless trading, and more."
+          }
+        />
 
-      {/* Features Grid */}
-      <div className="grid gap-6 mt-8">
-        {/* First Row: 2 Columns */}
-        <div
-          className="grid md:grid-cols-2 gap-[24px] border-gray-300 dark:border-gray-600 pb-6"
-          style={{ width: "1200px", height: "400px" }}
-        >
-          {features.slice(0, 2).map((feature, index) => (
-            <FeatureCard
-              key={index}
-              title={feature.title}
-              description={feature.description}
-              image={feature.image}
-              customStyles={{
-                width: "588px",
-                height: "400px",
-                borderRadius: "16px",
-                padding: "40px",
-                gap: "16px",
-              }}
-            />
-          ))}
+        {/* Features Grid */}
+        <div className="grid gap-6 mt-16">
+          {/* First Row: 2 Columns */}
+          <div className="grid md:grid-cols-2 gap-[24px] border-gray-300">
+            {features.slice(0, 2).map((feature, index) => (
+              <FeatureCard
+                key={index}
+                title={feature.title}
+                description={feature.description}
+                image={feature.image}
+              />
+            ))}
+          </div>
+
+          {/* Second Row: 3 Columns */}
+          <div className="grid grid-cols-3 gap-[24px] border-gray-300 dark:border-gray-600 max-lg:grid-cols-2 max-md:grid-cols-1">
+            {features.slice(2, 5).map((feature, index) => (
+              <FeatureCard
+                key={index}
+                title={feature.title}
+                description={feature.description}
+                image={feature.image}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* Second Row: 3 Columns */}
-        <div
-          className="grid md:grid-cols-3 gap-[16px] border-gray-300 dark:border-gray-600"
-          style={{ width: "1200px", height: "400px" }}
-        >
-          {features.slice(2, 5).map((feature, index) => (
-            <FeatureCard
-              key={index}
-              title={feature.title}
-              description={feature.description}
-              image={feature.image}
-              customStyles={{
-                width: "384px",
-                height: "400px",
-                borderRadius: "16px",
-                padding: "40px",
-                gap: "16px",
-                borderRightWidth: "4px",
-              }}
-            />
-          ))}
+        {/* Get Started Button (Aligned Left) */}
+        <div className="mt-6">
+          <Button variant={"primary"}> Get started</Button>
         </div>
-      </div>
-
-      {/* Get Started Button (Aligned Left) */}
-      <div className="mt-6 text-left">
-        <button className="px-6 py-2 border border-gray-700 dark:border-gray-300 rounded-lg text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-          Get started
-        </button>
-      </div>
-    </div>
+      </Layout>
+    </section>
   );
 }

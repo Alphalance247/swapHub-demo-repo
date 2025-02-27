@@ -16,6 +16,7 @@ export default function Home() {
           <Input placeholder="default" />
         </div>
 
+      <RecentSearch/>
         <div className="mt-6">
           <Input
             className="bg-[url('/assets/icons/commonIcons/search.svg')]  bg-no-repeat text-base bg-[15px_13px] bg-[length:20px_20px]"
