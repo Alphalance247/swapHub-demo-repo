@@ -1,6 +1,13 @@
+"use client"
 import BgImage from "next/image"
 import Icon from "next/image"
 import Logo from "next/image"
+import { useState } from "react"
+import { useMemo } from "react"
+import { useRouter } from "next/navigation"
+import Input from "../common/SearchInput"
+import { AiFillEye } from "react-icons/ai"
+import Button from "../components/button"
 
 
 import toast from "react-hot-toast";
