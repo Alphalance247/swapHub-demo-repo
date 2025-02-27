@@ -27,7 +27,7 @@ const data = [
 ];
 const ShowCase = () => {
   return (
-    <section className="py-20">
+    <section className="py-20 bg-white">
       <div className="max-w-[1250px] mx-auto px-4">
         <div className="mb-[5rem] w-[600px] mx-auto max-md:w-full max-md:mb-12">
           <h1 className="text-center text-[#303030] text-[56px] font-semibold leading-[64px] mb-4 max-md:text-3xl">
