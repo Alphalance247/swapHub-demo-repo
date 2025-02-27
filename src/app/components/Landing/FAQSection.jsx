@@ -64,11 +64,11 @@ export default function FAQSection() {
         <HeadingWithSubHead
           heading={" Frequently Asked Questions"}
           vaiant={"secondary"}
-          className={"text-center mb-16 w-[60%] mx-auto"}
+          className={"text-center mb-16 w-[60%] mx-auto max-md:w-full"}
         />
 
         {/* FAQ List */}
-        <div className="mt-6 space-y-6 w-[60%] mx-auto max-lg:w-[80%]">
+        <div className="mt-6 space-y-6 w-[60%] mx-auto max-lg:w-[80%] max-md:w-full">
           {[...initialFAQs, ...(showMore ? extraFAQs : [])].map(
             (faq, index) => (
               <div

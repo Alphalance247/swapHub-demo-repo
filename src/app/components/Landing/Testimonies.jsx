@@ -13,19 +13,19 @@ export default function TestimonialsSlider() {
       name: "James Okwu",
       feedback:
         "Upload products or services with detailed descriptions, images, and pricing. Whether you're selling, trading, or bartering, SwapHub supports it all.",
-      image: "/assets/image/okwu.png",
+      image: "/assets/image/5.png",
     },
     {
       name: "Adeyeye Sulaimon",
       feedback:
         "Upload products or services with detailed descriptions, images, and pricing. Whether you're selling, trading, or bartering, SwapHub supports it all.",
-      image: "/assets/image/okwu.png",
+      image: "/assets/image/6.png",
     },
     {
       name: "Aisha Bello",
       feedback:
         "Upload products or services with detailed descriptions, images, and pricing. Whether you're selling, trading, or bartering, SwapHub supports it all.",
-      image: "/assets/image/okwu.png",
+      image: "/assets/image/6.png",
     },
   ];
 
@@ -72,37 +72,40 @@ export default function TestimonialsSlider() {
         <HeadingWithSubHead
           heading={"Customers Are Enjoying What Was Built For Them"}
           vaiant={"secondary"}
-          className={"text-center mb-16 w-[60%] mx-auto"}
+          className={"text-center mb-16 w-[60%] mx-auto max-md:w-full"}
         />
 
         {/* Slider */}
-        <Slider {...settings}>
-          {testimonials.map((testimonial, index) => (
-            <div
-              className="border-[1.53px] rounded-xl p-6 grid grid-cols-2 items-center gap-12 bg-[#ECE7FF] shadow-md"
-              key={index}
-            >
-              {/* Image Column */}
-              <Image
-                src={testimonial.image}
-                alt={testimonial.name}
-                width={200}
-                height={200}
-                className="rounded-[12px]"
-              />
+        <div className="mb-8">
+          <Slider {...settings}>
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="">
+                <div className="border-[1.56px] mr-6 border-[#4A4A4A]  rounded-2xl p-6 grid md:grid-cols-2 items-center gap-x-6 gap-y-6 bg-[#ECE7FF] shadow-md max-md:p-3">
+                  {/* Image Column */}
+                  <div>
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      width={200}
+                      height={200}
+                      layout="responsive"
+                    />
+                  </div>
 
-              {/* Text Column */}
-              <div className="flex flex-col gap-[16px]">
-                <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100">
-                  {testimonial.name}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  {testimonial.feedback}
-                </p>
+                  {/* Text Column */}
+                  <div className="flex flex-col gap-[16px]">
+                    <h3 className="font-semibold text-2xl text-[#303030] font-recoletaBold">
+                      {testimonial.name}
+                    </h3>
+                    <p className="text-[#616161] text-lg">
+                      {testimonial.feedback}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </Layout>
     </section>
   );
