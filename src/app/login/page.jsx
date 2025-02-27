@@ -92,7 +92,7 @@ const Login = () => {
                 </div>
               </form>
               <p className="self-stretch font-[Inter] font-[450px] text-sm ">
-                Don't have an account?{" "}
+                Don`t have an account?{" "}
                 <a
                   className="text-[#005BD3] decoration-solid decoration-auto underline underline-offset-auto "
                   href="#"
