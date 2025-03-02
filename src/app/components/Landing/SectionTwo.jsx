@@ -39,11 +39,11 @@ export default function SectionTwoComponent() {
           }
           withSubHead={false}
           vaiant={"secondary"}
-          className={"w-[80%] mx-auto mb-16 text-center"}
+          className={"w-[80%] mx-auto mb-16 text-center max-md:w-[full]"}
         />
 
         {/* Grid Layout */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-6 max-md:grid-cols-1">
           {cardData.map((card, index) => (
             <Card
               key={index}

@@ -14,7 +14,7 @@ const Tabs = ({ tabs, activeTab, setActiveTab }) => {
               activeTab === index
                 ? "bg-black text-white"
                 : "bg-[#F0F0F0] text-black hover:bg-gray-100"
-            }`}
+            } max-lg:text-sm max-md:px-3 max-md:w-[169px] max-md:justify-center`}
         >
           {activeTab === index && (
             <span className="w-2 h-2 bg-yellow-400 rounded-full"></span>

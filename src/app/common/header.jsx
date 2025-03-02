@@ -16,8 +16,8 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky z-[1000] top-[2.5rem]">
-      <div className="px-6 py-4 bg-white h-[86px] rounded-2xl shadow-[0px_4px_10px_0px_rgba(18,18,18,0.04)] max-w-[1280px] mx-auto flex justify-between items-center">
+    <header className="sticky z-[1000] top-[2.5rem] px-6 max-md:px-4 max-md:top-5">
+      <div className="py-4 px-6 bg-white h-[86px] rounded-2xl shadow-[0px_4px_10px_0px_rgba(18,18,18,0.04)] max-w-[1280px] mx-auto flex justify-between items-center">
         <Link href="/">
           <Image
             src="/assets/icons/commonIcons/logo.svg"

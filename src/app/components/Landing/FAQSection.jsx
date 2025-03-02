@@ -1,6 +1,8 @@
 "use client"; // Required for state in Next.js App Router
+import Layout from "@/app/common/layout";
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import HeadingWithSubHead from "@/app/common/headingWithSubHead";
 
 export default function FAQSection() {
   // Initial FAQs
@@ -56,59 +58,65 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto py-12 px-4">
-      {/* Heading */}
-      <h2 className="text-2xl md:text-3xl font-semibold text-center text-gray-900 dark:text-gray-100">
-        Frequently Asked Questions
-      </h2>
+    <section className="bg-white">
+      <Layout>
+        {/* Heading */}
+        <HeadingWithSubHead
+          heading={" Frequently Asked Questions"}
+          vaiant={"secondary"}
+          className={"text-center mb-16 w-[60%] mx-auto max-md:w-full"}
+        />
 
-      {/* FAQ List */}
-      <div className="mt-6 space-y-4">
-        {[...initialFAQs, ...(showMore ? extraFAQs : [])].map((faq, index) => (
-          <div
-            key={index}
-            className="border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden transition-all duration-300"
-          >
-            <button
-              className="w-full flex justify-between items-center p-4 bg-white dark:bg-gray-900 text-left"
-              onClick={() => toggleFAQ(index)}
-            >
-              <span className="font-semibold text-gray-900 dark:text-gray-100">
-                {faq.question}
-              </span>
-              {openIndex === index ? (
-                <FaMinus className="text-gray-600 dark:text-gray-300" />
-              ) : (
-                <FaPlus className="text-gray-600 dark:text-gray-300" />
-              )}
-            </button>
-            {openIndex === index && (
-              <div className="p-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
-                {faq.answer}
+        {/* FAQ List */}
+        <div className="mt-6 space-y-6 w-[60%] mx-auto max-lg:w-[80%] max-md:w-full">
+          {[...initialFAQs, ...(showMore ? extraFAQs : [])].map(
+            (faq, index) => (
+              <div
+                key={index}
+                className="border-4 border-[#121212] rounded-lg overflow-hidden transition-all duration-300"
+              >
+                <button
+                  className="w-full flex gap-x-4 items-center p-4 bg-white dark:bg-gray-900 text-left"
+                  onClick={() => toggleFAQ(index)}
+                >
+                  {openIndex === index ? (
+                    <FaMinus className="text-gray-600" />
+                  ) : (
+                    <FaPlus className="text-[#EF6703]" />
+                  )}
+                  <span className="font-recoletaBold text-[#121212] text-lg max-lg:text-base">
+                    {faq.question}
+                  </span>
+                </button>
+                {openIndex === index && (
+                  <div className="p-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                    {faq.answer}
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-        ))}
-      </div>
+            )
+          )}
+        </div>
 
-      {/* Show More / Show Less Button */}
-      <div className="mt-6 text-center">
-        {!showMore ? (
-          <button
-            onClick={handleShowMore}
-            className="px-6 py-2 border border-gray-900 dark:border-gray-100 rounded-lg text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-          >
-            See more FAQs →
-          </button>
-        ) : (
-          <button
-            onClick={handleShowLess}
-            className="px-6 py-2 border border-gray-900 dark:border-gray-100 rounded-lg text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-          >
-            Show less FAQs ↑
-          </button>
-        )}
-      </div>
-    </div>
+        {/* Show More / Show Less Button */}
+        <div className="mt-6 text-center">
+          {!showMore ? (
+            <button
+              onClick={handleShowMore}
+              className="px-6 py-2 border border-gray-900 dark:border-gray-100 rounded-lg text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            >
+              See more FAQs →
+            </button>
+          ) : (
+            <button
+              onClick={handleShowLess}
+              className="px-6 py-2 border border-gray-900 dark:border-gray-100 rounded-lg text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            >
+              Show less FAQs ↑
+            </button>
+          )}
+        </div>
+      </Layout>
+    </section>
   );
 }
