@@ -179,12 +179,16 @@ const Header = () => {
           })}
 
           <div className="flex flex-col gap-y-4">
-            <Button variant="primary" className="w-fit max-lg:w-full">
-              Login
-            </Button>
-            <Button className="w-[258px] max-lg:w-full" variant={"secondary"}>
-              Start a free account
-            </Button>
+            <Link href={"/login"}>
+              <Button variant="primary" className="w-fit max-lg:w-full">
+                Login
+              </Button>
+            </Link>
+            <Link href={"/signup"}>
+              <Button className="w-[258px] max-lg:w-full" variant={"secondary"}>
+                Start a free account
+              </Button>
+            </Link>
           </div>
         </nav>
       </div>

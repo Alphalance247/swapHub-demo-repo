@@ -76,7 +76,7 @@ export default function FAQSection() {
                 className="border-4 border-[#121212] rounded-lg overflow-hidden transition-all duration-300"
               >
                 <button
-                  className="w-full flex gap-x-4 items-center p-4 bg-white dark:bg-gray-900 text-left"
+                  className="w-full flex gap-x-4 items-center p-4 bg-white  text-left"
                   onClick={() => toggleFAQ(index)}
                 >
                   {openIndex === index ? (
@@ -89,7 +89,7 @@ export default function FAQSection() {
                   </span>
                 </button>
                 {openIndex === index && (
-                  <div className="p-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                  <div className="p-4 bg-gray-50  text-gray-700 ">
                     {faq.answer}
                   </div>
                 )}
