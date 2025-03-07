@@ -6,7 +6,7 @@ import Image from "next/image";
 const JoinUs = () => {
   return (
     <section className="bg-[#303030] relative">
-      <div className=" h-[100%]">
+      <div className=" h-[100%] max-md:hidden">
         <Image
           src="/assets/Home/images/1b.png"
           alt=""
@@ -17,7 +17,7 @@ const JoinUs = () => {
       </div>
       <Layout>
         <div>
-          <p className="text-center text-white text-[40px] font-bold leading-[48px] mb-6 w-[63%] mx-auto font-recoletaBold max-lg:text-3xl">
+          <p className="text-center text-white text-[40px] font-bold leading-[48px] mb-6 w-[63%] mx-auto font-recoletaBold max-lg:text-3xl max-md:w-[100%] max-md:text-2xl">
             Join thousands of vendors and service providers making business
             seamless with SwapHub.
           </p>
@@ -28,7 +28,7 @@ const JoinUs = () => {
           </div>
         </div>
       </Layout>
-      <div className="overflow-clip">
+      <div className="overflow-clip max-md:hidden">
         <Image
           src="/assets/Home/images/1a.png"
           alt=""

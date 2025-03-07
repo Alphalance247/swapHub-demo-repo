@@ -9,7 +9,7 @@ export default function TabSection({ activeTab, setActiveTab }) {
   ];
 
   return (
-    <div className="flex justify-center mt-6 max-md:overflow-scroll">
+    <div className="flex justify-center mt-6 max-md:overflow-scroll max-md:pl-[21rem]">
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabItems} />
     </div>
   );

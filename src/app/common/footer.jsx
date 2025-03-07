@@ -34,18 +34,18 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="bg-[#1A1A1A]">
-      <div className="max-w-[1280px] pt-36 pb-12 px-6 mx-auto">
+    <footer className="bg-[#1A1A1A] max-md:bg-[#1A1A1A]">
+      <div className="max-w-[1280px] pt-36 pb-12 px-6 mx-auto max-md:pt-10">
         <div className="flex gap-x-20 justify-between mb-20 max-xl:gap-x-10 max-lg:flex-col max-lg:gap-y-10">
           {/* [25%15%15%25%] */}
-          <div className="w-[25%]">
+          <div className="w-[25%] max-md:w-[90%] max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
             <Image
               src="/assets/icons/commonIcons/footerlogo.svg"
               width={130}
               height={28}
               alt="logo"
             />
-            <p className="text-[#e3e3e3] text-xl font-normal mt-8">
+            <p className="text-[#e3e3e3] text-xl font-normal mt-8 max-md:text-center">
               Turn your products and services into a seamless online experience
               for customers.
             </p>
@@ -74,7 +74,7 @@ const Footer = () => {
 
           {navs.map((items) => {
             return (
-              <div key={items?.id} className="">
+              <div key={items?.id} className="max-md:grid max-md:grid-cols-2">
                 <h6 className="mb-6 text-white text-base font-bold">
                   {items?.heading}
                 </h6>

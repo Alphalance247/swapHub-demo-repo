@@ -109,12 +109,12 @@ const GettingStarted = () => {
 
           {/* Buttons for showing progress */}
           <div className="mt-6 mx-auto w-[85%] gap-x-3 flex justify-end">
-            <Button variant={"primary"} className={"max-md:w-fit"}>
+            <Button variant={"primary"} className={"max-md:w-fit max-sm:w-fit"}>
               {activeTab + 1} / 4
             </Button>
             <Button
               variant={"primary"}
-              className={"max-md:w-fit"}
+              className={"max-md:w-fit max-sm:w-fit"}
               onClick={() => {
                 if (activeTab < 3) {
                   setActiveTab(activeTab + 1);

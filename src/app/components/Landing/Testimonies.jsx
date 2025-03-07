@@ -37,13 +37,13 @@ export default function TestimonialsSlider() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrow: false,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -52,7 +52,7 @@ export default function TestimonialsSlider() {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -80,7 +80,7 @@ export default function TestimonialsSlider() {
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
               <div key={index} className="">
-                <div className="border-[1.56px] mr-6 border-[#4A4A4A]  rounded-2xl p-6 grid md:grid-cols-2 items-center gap-x-6 gap-y-6 bg-[#ECE7FF] shadow-md max-md:p-3">
+                <div className="border-[1.56px] mr-6 border-[#4A4A4A]  rounded-2xl p-6 grid lg:grid-cols-1 xl:grid-cols-2 items-center gap-x-6 gap-y-6 bg-[#ECE7FF] shadow-md max-md:p-3">
                   {/* Image Column */}
                   <div>
                     <Image

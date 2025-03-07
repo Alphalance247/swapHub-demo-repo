@@ -1,110 +1,103 @@
-import BgImage from "next/image";
 import Icon from "next/image";
 import Logo from "next/image";
+import Image from "next/image";
+import Button from "../common/Button";
 
 const Login = () => {
   return (
-    <>
-      <section className="bg-[#F5F5F5] rounded-[40px] flex items-start flex-col px-[120px] pt-10 pb-[100px] w-[1440px] gap-16">
-        <div className="flex items-center gap-[5.714]">
+    <section className="bg-[#F5F5F5] h-screen md:h-auto">
+      <div className="max-w-[1280px] py-10 px-6 mx-auto max-lg:px-4 max-lg:py-16 max-md:px-4 max-md:py-4">
+        <div className=" bg-[white] mb-10 p-4 w-full rounded-lg md:mb-16 lg:bg-transparent lg:p-0">
           <Logo
-            src="/assets/image/logo.png"
+            src="/assets/login/logo.svg"
             alt="swapHubLogo"
-            width={37.154}
-            height={34.286}
+            width={180}
+            height={40}
           />
-          <p className="text-[#000] font-[Recoleta] font-bold text-center not-italic">
-            swaphub
-          </p>
         </div>
 
-        <section className=" flex items-center gap-16">
-          <div>
-            <BgImage
-              className="flex-1 self-stretch rounded-2xl "
+        <section className="grid md:grid-cols-2 xl:grid-cols-[55%auto] md:gap-8 lg:gap-16">
+          <div className="hidden md:block">
+            <Image
               src="/assets/image/swapimg.png"
               alt="bgImage"
               width={648}
               height={552}
+              className="h-full w-fit object-cover rounded-xl "
             />
           </div>
-          <div className="bg-[#FFF] flex flex-col justify-center items-center p-10 gap-10 w-[488px] rounded-2xl">
-            <div className="flex flex-col items-start self-stretch gap-2">
-              <h1 className="text-[#303030] self-stretch font-bold font-[Recoleta] text-2xl not-italic">
+
+          <div className="bg-[#FFF] flex flex-col gap-0 p-4 md:p-10 md:gap-10 rounded-2xl">
+            <div className="flex flex-col mb-10 items-start self-stretch gap-2 md:mb-0">
+              <h1 className="text-[#303030] text-xl self-stretch font-bold font-recoletaBold md:text-2xl ">
                 Welcome Back to Swaphub!
               </h1>
-              <p className="text-[#B5B5B5] self-stretch font-[Inter] text-base font-[450px] not-italic">
+              <p className="text-[#B5B5B5] font-[450] text-sm self-stretch md:text-base">
                 Access your dashboard, manage your products & services, and
                 connect with customers.
               </p>
             </div>
 
-            <div className="flex flex-col items-start gap-6 w-[400px]">
-              <div className="flex flex-col items-center self-stretch gap-6">
-                <div className="flex justify-center items-center px-3 py-2 bg-[#F1F1F1] rounded-3xl w-[200px] gap-2.5">
-                  <Icon
-                    src="/assets/image/Google Icon.png"
-                    alt="google"
-                    width={20}
-                    height={20}
-                  />
-                  <p className=" text-[#303030] font-[Inter] w-[450px] text-sm not-italic">
-                    Log In with Google
-                  </p>
-                </div>
-                <div className="flex justify-center items-center gap-4 self-stretch">
-                  <hr className="h-[1px] w-[174.5px] text-[#B5B5B5]" />
-                  <p className="font-[Inter] not-italic font-[450px] text-[16px] leading-4">
-                    Or
-                  </p>{" "}
-                  <hr className="h-1 w-44" />
-                </div>
+            <div className="flex flex-col items-center gap-6">
+              <div className="flex justify-center items-center px-3 py-2 bg-[#F1F1F1] rounded-3xl  gap-2.5 ">
+                <Icon
+                  src="/assets/image/Google Icon.png"
+                  alt="google"
+                  width={20}
+                  height={20}
+                />
+                <p className=" text-[#303030] text-sm not-italic">
+                  Log In with Google
+                </p>
+              </div>
+              <div className="flex justify-center items-center gap-4 self-stretch">
+                <hr className="h-[1px] w-full md:w-[174.5px] text-[#B5B5B5] " />
+                <p className="font-[Inter] not-italic font-[450px] text-[16px] leading-4">
+                  Or
+                </p>{" "}
+                <hr className="h-1 w-full md:w-44" />
+              </div>
+            </div>
+
+            <form className="" action="">
+              <div className=" my-3">
+                <label className="text-base font-[450] text-[#303030] my-1">
+                  Email Address
+                </label>
+                <input
+                  className="w-full  p-3 border-[0.5px] border-solid border-[#8A8A8A] rounded-md"
+                  type="email"
+                  placeholder="Enter your email adddress"
+                />
+              </div>
+              <div className="my-4">
+                <label className="text-base font-[450]  text-[#303030] my-1">
+                  Password
+                </label>
+                <input
+                  className="w-full p-3 border-[0.5px] border-solid border-[#8A8A8A] rounded-md"
+                  type="password"
+                  placeholder="Enter your password"
+                />
               </div>
 
-              <form className="" action="">
-                <div className="flex w-[400px] flex-col items-start my-3">
-                  <label className="font-[Inter] font-[450px] text-[16px] leading-5 text-[#303030] my-1">
-                    Email Address
-                  </label>
-                  <input
-                    className="flex items-center self-stretch p-3 border-[0.5px] border-solid border-[#8A8A8A] rounded-md"
-                    typeof="email"
-                    placeholder="Enter your email adddress"
-                  />
-                </div>
-                <div className="flex w-[400px] flex-col items-start my-3">
-                  <label className="font-[Inter] font-[450px] text-[16px] leading-5 text-[#303030] my-1">
-                    Password
-                  </label>
-                  <input
-                    className="flex items-center self-stretch p-3 border-[0.5px] border-solid border-[#8A8A8A] rounded-md"
-                    typeof="password"
-                    placeholder="Enter your password"
-                  />
-                </div>
-                <div className="flex items-center self-stretch justify-center py-3 px-4 gap-[10px] rounded-md bg-[#121212] border-[1px] border-solid border-[#121212]">
-                  <button
-                    typeof="submit"
-                    className="text-[#FFF] text-center font-[Inter] text-[16px] leading-5 font-medium not-italic"
-                  >
-                    Create account
-                  </button>
-                </div>
-              </form>
-              <p className="self-stretch font-[Inter] font-[450px] text-sm ">
-                Don`t have an account?{" "}
-                <a
-                  className="text-[#005BD3] decoration-solid decoration-auto underline underline-offset-auto "
-                  href="#"
-                >
-                  Sign up for free
-                </a>
-              </p>
-            </div>
+              <Button variant={"secondary"} className={"w-full"}>
+                Create account
+              </Button>
+            </form>
+            <p className="text-sm font-[450] mt-3 text-[#616161] md:mt-0">
+              Don`t have an account?{" "}
+              <a
+                className="text-[#005BD3] decoration-solid decoration-auto underline underline-offset-auto "
+                href="#"
+              >
+                Sign up for free
+              </a>
+            </p>
           </div>
         </section>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
