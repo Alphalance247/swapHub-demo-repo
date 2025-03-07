@@ -86,7 +86,7 @@ const Login = () => {
               </Button>
             </form>
             <p className="text-sm font-[450] mt-3 text-[#616161] md:mt-0">
-              Don`t have an account?{" "}
+              Don`t have an account?
               <a
                 className="text-[#005BD3] decoration-solid decoration-auto underline underline-offset-auto "
                 href="#"
